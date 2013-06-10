@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Trapeze Example</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./trapeze.css">
+    <style type="text/css">
+        .trigger {
+            position: absolute;
+            top: 380px;
+            left: 200px;
+            width: 50px;
+            height: 50px;
+            background: lawngreen;
+            border: 1px solid rgba(0,0,0,.5);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <p>Here is Trapeze.</p>
+
+
+    <div id="Trigger" class="trigger"></div>
+
+
+
+    <script src="../bowerComponents/jquery/jquery.min.js"></script>
+    <script src="../bowerComponents/requirejs/require.js"></script>
+    <script src="./trapeze.js"></script>
+    <script type="text/javascript">
+        require(['trapeze'],function(Trapeze){
+            console.log( new Trapeze() )
+
+            $('#Trigger').on('click', function(){
+                var pos = $(this).offset()
+                console.log('x: ' + pos.x + ' y: ' + pos.y)
+            })
+
+
+
+            var _logOrigin = function() {
+                console.log(  )
+            }
+
+        })
+    </script>
+</body>
+</html>
